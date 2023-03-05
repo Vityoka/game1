@@ -2,6 +2,8 @@
 #based on: https://stackoverflow.com/questions/12682045/git-status-show-files-that-will-be-added-staged-in-subdirectories
 /.vs/
 External/
+Debug/
+Release/
 Collision3/*
 !Collision3/res/
 !Collision3/src/
