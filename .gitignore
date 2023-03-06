@@ -1,6 +1,7 @@
 #based on: https://stackoverflow.com/questions/1826901/should-i-add-vcxproj-filter-files-to-source-control
 #based on: https://stackoverflow.com/questions/12682045/git-status-show-files-that-will-be-added-staged-in-subdirectories
 /.vs/
+/.vscode/
 External/
 Debug/
 Release/

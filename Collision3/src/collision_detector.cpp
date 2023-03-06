@@ -100,7 +100,7 @@ CollisionDescriptor CollisionDetector::detectCollision(Player& player, sf::Windo
   return collisionDescriptor;
 }
 
-CollisionDescriptor CollisionDetector::detectAABBCollision(const std::vector<Entity*>& entities, Entity* thisEntity)
+CollisionDescriptor CollisionDetector::detectAABBCollision_old(const std::vector<Entity*>& entities, Entity* thisEntity)
 {
   CollisionDescriptor collisionDescriptor;
   collisionDescriptor.hitPosition = 0.0f;
@@ -120,4 +120,24 @@ CollisionDescriptor CollisionDetector::detectAABBCollision(const std::vector<Ent
     }
   }
   return collisionDescriptor;
+}
+
+Entity* CollisionDetector::detectAABBCollision(const std::vector<Entity*>& entities, Entity* thisEntity)
+{
+  Entity* p_returnEntity = nullptr;
+  for (auto entity : entities)
+  {
+    if (thisEntity == entity)
+    {
+      // checking collision with itself is skipped
+      continue;
+    }
+    if (entity->getShape().getGlobalBounds().intersects(thisEntity->getShape().getGlobalBounds()))
+    {
+      p_returnEntity = entity;
+      break;
+    }
+  }
+
+  return p_returnEntity;
 }

@@ -33,7 +33,8 @@ public:
   static CollisionDescriptor detectCollision(Ball& ball, Bricks& bricks);
   static CollisionDescriptor detectCollision(Ball& ball, Player& player);
   static CollisionDescriptor detectCollision(Player& player, sf::Window& window);
-  static CollisionDescriptor detectAABBCollision(const std::vector<Entity*>& entities, Entity* thisEntity);
+  static CollisionDescriptor detectAABBCollision_old(const std::vector<Entity*>& entities, Entity* thisEntity);
+  Entity* detectAABBCollision(const std::vector<Entity*>& entities, Entity* thisEntity);
 };
 
 #endif //COLLISION_DETECTOR_H_GUARD

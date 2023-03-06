@@ -139,6 +139,11 @@ void Game::update()
   }
 }
 
+void resolveCollsion(Entity* e1, Entity* e2)
+{
+
+}
+
 void Game::updateNormal()
 {
   for (auto entity : m_entities)
@@ -146,9 +151,11 @@ void Game::updateNormal()
     entity->savePrevPos();
     entity->calcNextPos(m_deltaTime);
     entity->update(m_window); //todo: necessary now because collison detection now works based on shape position and not member position variables.
-    if (m_collisionDetector.detectAABBCollision(m_entities, entity).collisionType != CollisionDescriptor::CollisionType::NoCollision)
+    Entity* collidedEntity = m_collisionDetector.detectAABBCollision(m_entities, entity);
+    if (collidedEntity != nullptr)
     {
-      entity->restorePos();
+      //entity->restorePos();
+      
     }
     entity->update(m_window);
   }
