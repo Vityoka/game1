@@ -8,6 +8,8 @@
 #include "player.h"
 #include "wall.h"
 #include "collision_detector.h"
+#include "collision_resolver_base.h"
+#include "collision_resolver_linear.h"
 
 enum GameState : char{
   GAME_INIT = 0,
@@ -33,6 +35,7 @@ private:
   float m_deltaTime;
 
   CollisionDetector m_collisionDetector;
+  CollisionResolverLinear m_collisionResolver;
 
   std::vector<Entity*> m_entities;
 

@@ -10,47 +10,48 @@ Ball::Ball()
 {
 	float intialStartDeviation = -0.2f; //should be randomized
 
-  m_posX = ballInitPostionX;
-  m_posY = ballInitPostionY;
-  velocity.x = intialStartDeviation * ballVelocity;
-  velocity.y = - sqrt(ballVelocity * ballVelocity - velocity.x * velocity.x);
+  m_mass = ballMass;
+  m_position.x = ballInitPostionX;
+  m_position.y = ballInitPostionY;
+  m_velocity.x = intialStartDeviation * ballVelocity;
+  m_velocity.y = - sqrt(ballVelocity * ballVelocity - m_velocity.x * m_velocity.x);
   shape.setRadius(ballRadius);
   shape.setFillColor(sf::Color::Green);
   shape.setOrigin(ballRadius, ballRadius);
-  shape.setPosition(m_posX, m_posY);
+  shape.setPosition(m_position.x, m_position.y);
 }
 
 
 Ball::Ball(sf::Vector2f shapeSize, sf::Color color, float posX, float posY)
 {
-  m_posX = posX;
-  m_posY = posY;
+  m_position.x = posX;
+  m_position.y = posY;
   shape.setRadius(shapeSize.x);
   shape.setFillColor(sf::Color::Green);
   shape.setOrigin(shapeSize.x, shapeSize.x);
-  shape.setPosition(m_posX, m_posY);
+  shape.setPosition(m_position.x, m_position.y);
 }
 
 
 void Ball::calcNextPos(float deltaTime)
 {
-  m_posX += velocity.x * deltaTime;
-  m_posY += velocity.y * deltaTime;
+  m_position.x += m_velocity.x * deltaTime;
+  m_position.y += m_velocity.y * deltaTime;
 }
 
 void Ball::savePrevPos()
 {
-  m_prevPosX = m_posX;
-  m_prevPosY = m_posY;
+  m_prevPosition.x = m_position.x;
+  m_prevPosition.y = m_position.y;
 }
 
 void Ball::restorePos()
 {
-  m_posX = m_prevPosX;
-  m_posY = m_prevPosY;
+  m_position.x = m_prevPosition.x;
+  m_position.y = m_prevPosition.y;
 }
 
 void Ball::update(sf::Window& window)
 {
-  shape.setPosition(m_posX, m_posY);
+  shape.setPosition(m_position.x, m_position.y);
 }

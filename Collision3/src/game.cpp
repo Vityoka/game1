@@ -117,7 +117,11 @@ void Game::render()
 
 void Game::update()
 {
-  m_deltaTime = m_clock.restart().asSeconds();
+  // Time control. Currently overriden with constant to support debugging.
+  //m_deltaTime = m_clock.restart().asSeconds();  
+  //std::cout << m_deltaTime << std::endl;
+  m_deltaTime = 0.017;  // if real clock is used than in debug mode breakpoint sets infinite time and everything falls apart.
+
   m_window.clear(sf::Color::Black);
   pollEvents();
 
@@ -154,9 +158,9 @@ void Game::updateNormal()
     Entity* collidedEntity = m_collisionDetector.detectAABBCollision(m_entities, entity);
     if (collidedEntity != nullptr)
     {
+      m_collisionResolver.resolveCollision(collidedEntity, entity);
       //entity->restorePos();
-      
     }
-    entity->update(m_window);
+    //entity->update(m_window);
   }
 }

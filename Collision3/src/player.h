@@ -4,7 +4,8 @@
 #include <SFML/Graphics.hpp>
 #include "entity.h"
 
-constexpr float playerInitPosX = 400.0f;
+constexpr float offsetXDebug = 200.0f;
+constexpr float playerInitPosX = 400.0f - offsetXDebug;
 constexpr float playerInitPosY = 550.0f;
 
 class Player : public Entity
@@ -22,10 +23,10 @@ public:
   void update(sf::Window& window) override;
   const sf::Shape& getShape() override {return shape;}
 
-  float getBorderLeft() const{return m_posX - shapeSize.x / 2.0;}
-  float getBorderRight() const{return m_posX + shapeSize.x / 2.0;}
-  float getBorderTop() const{return m_posY - shapeSize.y / 2.0;}
-  float getBorderBottom() const{return m_posY + shapeSize.y / 2.0;}
+  float getBorderLeft() const{return m_position.x - shapeSize.x / 2.0;}
+  float getBorderRight() const{return m_position.x + shapeSize.x / 2.0;}
+  float getBorderTop() const{return m_position.y - shapeSize.y / 2.0;}
+  float getBorderBottom() const{return m_position.y + shapeSize.y / 2.0;}
 };
 
 #endif //PLAYER_H_GUARD

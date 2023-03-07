@@ -5,22 +5,22 @@ constexpr float wallInitPosY = 550.0f;
 
 Wall::Wall()
 {
-  m_posX = wallInitPosX;
-  m_posY = wallInitPosY;
+  m_position.x = wallInitPosX;
+  m_position.y = wallInitPosY;
   shape.setSize(shapeSize);
   shape.setFillColor(sf::Color::Red);
   shape.setOrigin(shapeSize.x / 2.0f, shapeSize.y / 2.0f);
-  shape.setPosition(m_posX, m_posY);
+  shape.setPosition(m_position.x, m_position.y);
 }
 
 Wall::Wall(sf::Vector2f shapeSize, sf::Color color, float posX = wallInitPosX, float posY = wallInitPosY)
 {
-  m_posX = posX;
-  m_posY = posY;
+  m_position.x = posX;
+  m_position.y = posY;
   shape.setSize(shapeSize);
   shape.setFillColor(color);
   shape.setOrigin(shapeSize.x / 2.0f, shapeSize.y / 2.0f);
-  shape.setPosition(m_posX, m_posY);
+  shape.setPosition(m_position.x, m_position.y);
 }
 
 
@@ -31,14 +31,14 @@ void Wall::calcNextPos( float deltaTime )
 
 void Wall::savePrevPos()
 {
-  m_prevPosX = m_posX;
-  m_prevPosY = m_posY;
+  m_prevPosition.x = m_position.x;
+  m_prevPosition.y = m_position.y;
 }
 
 void Wall::restorePos()
 {
-  m_posX = m_prevPosX;
-  m_posY = m_prevPosY;
+  m_position.x = m_prevPosition.x;
+  m_position.y = m_prevPosition.y;
 }
 
 const sf::Shape& Wall::getShape(void)
