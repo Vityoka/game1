@@ -30,12 +30,7 @@ Entity* BallCreator::createRandomProduct(sf::Vector2i shapePos)
 
   float velocityMagnitude = distributionForVelocityMagnitude(rd);
   float velocityAngle = distributionForVelocityAngle(rd);
-
-
   sf::Vector2f velocity { velocityMagnitude*cos(velocityAngle) , velocityMagnitude*sin(velocityAngle) };
-
-  std::cout << velocity.x << std::endl;
-  std::cout << velocity.y << std::endl;
 
   Entity* p_Product = new Ball(shapeSize, color, static_cast<float>(shapePos.x), static_cast<float>(shapePos.y), velocity);
   return p_Product;

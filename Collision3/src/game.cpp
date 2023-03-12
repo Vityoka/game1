@@ -50,10 +50,10 @@ void Game::init()
   WallCreator wallCreator;
   //Entity* p_wall = wallCreator.createProduct();
   //m_entities.push_back(p_wall);
-  //wallCreator.generateInitialWalls(m_entities);
+  wallCreator.generateInitialWalls(m_entities);
 
   Ball* p_ball = new Ball();
-  //m_entities.push_back(p_ball);
+  m_entities.push_back(p_ball);
 
 }
 

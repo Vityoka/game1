@@ -16,7 +16,7 @@ Ball::Ball()
   m_velocity.x = intialStartDeviation * ballVelocity;
   m_velocity.y = - sqrt(ballVelocity * ballVelocity - m_velocity.x * m_velocity.x);
   shape.setRadius(ballRadius);
-  shape.setFillColor(sf::Color::Green);
+  shape.setFillColor(sf::Color::Yellow);
   shape.setOrigin(ballRadius, ballRadius);
   shape.setPosition(m_position.x, m_position.y);
 }
@@ -24,6 +24,7 @@ Ball::Ball()
 
 Ball::Ball(sf::Vector2f shapeSize, sf::Color color, float posX, float posY)
 {
+  m_mass = ballMass;
   m_position.x = posX;
   m_position.y = posY;
   shape.setRadius(shapeSize.x);
@@ -34,6 +35,7 @@ Ball::Ball(sf::Vector2f shapeSize, sf::Color color, float posX, float posY)
 
 Ball::Ball(sf::Vector2f shapeSize, sf::Color color, float posX, float posY, sf::Vector2f velocity)
 {
+  m_mass = ballMass;
   m_position.x = posX;
   m_position.y = posY;
   shape.setRadius(shapeSize.x);
