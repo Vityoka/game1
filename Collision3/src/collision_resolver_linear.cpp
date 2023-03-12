@@ -27,5 +27,5 @@ void CollisionResolverLinear::resolveCollision(Entity* e1, Entity* e2)
   sf::Vector2f u2 = ((m2 - m1) / (m2 + m1)) * v2 + 2 * m1 / (m2 + m1) * v1;
 
   e1->setVelocity(u1);
-  e1->setVelocity(u2);
+  e2->setVelocity(u2);
 }

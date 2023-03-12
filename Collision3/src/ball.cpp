@@ -35,6 +35,24 @@ Ball::Ball(sf::Vector2f shapeSize, sf::Color color, float posX, float posY)
 
 void Ball::calcNextPos(float deltaTime)
 {
+  /*temporary solution for bouncing off from walls until collision with walls is solved*/
+  if (getBorderLeft() < 0.0f)
+  {
+    m_velocity.x *= -1.0f;
+  }
+  if (getBorderRight() > 800)
+  {
+    m_velocity.x *= -1.0f;
+  }
+  if (getBorderBottom() > 600)
+  {
+    m_velocity.y *= -1.0f;
+  }
+  if (getBorderTop() < 0)
+  {
+    m_velocity.y *= -1.0f;
+  }
+
   m_position.x += m_velocity.x * deltaTime;
   m_position.y += m_velocity.y * deltaTime;
 }

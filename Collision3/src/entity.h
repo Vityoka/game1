@@ -14,6 +14,7 @@ protected:
     sf::Vector2f m_velocity = {0.0f, 0.0f};
     float m_mass = 1e10f;
 public:
+    bool m_wasUpdated = false;
     Entity() {};
     Entity(float posX, float posY) : m_position{ posX, posY } { m_position.x = posX; m_position.y = posY; }
     virtual void update(sf::Window& window) = 0;
