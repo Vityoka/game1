@@ -24,6 +24,7 @@ private:
 public:
   Ball();
   Ball(sf::Vector2f shapeSize, sf::Color color, float posX, float posY);
+  Ball(sf::Vector2f shapeSize, sf::Color color, float posX, float posY, sf::Vector2f velocity);
 
   void calcNextPos(float deltaTime) override;
   void savePrevPos() override;

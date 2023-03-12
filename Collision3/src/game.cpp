@@ -1,6 +1,6 @@
 #include "game.h"
 #include "wall_creator.h"
-//#include "ball_creator.h"
+#include "ball_creator.h"
 
 
 Game::Game(sf::RenderWindow& window) : m_window(window)
@@ -43,17 +43,17 @@ void Game::init()
   //Create entities
 
   Player* p_player = new Player();
-  m_entities.push_back(p_player);
+  //m_entities.push_back(p_player);
 
   //Wall* p_wall = new Wall();
   //m_entities.push_back(p_wall);
   WallCreator wallCreator;
   //Entity* p_wall = wallCreator.createProduct();
   //m_entities.push_back(p_wall);
-  wallCreator.generateInitialWalls(m_entities);
+  //wallCreator.generateInitialWalls(m_entities);
 
   Ball* p_ball = new Ball();
-  m_entities.push_back(p_ball);
+  //m_entities.push_back(p_ball);
 
 }
 
@@ -77,9 +77,8 @@ void Game::pollEvents()
       }
       case sf::Event::MouseButtonPressed:
       {
-        //BallCreator ballCreator;
-        Entity* newBall = new Ball();
-        m_entities.push_back(newBall);
+        BallCreator ballCreator;
+        m_entities.push_back(ballCreator.createRandomProduct(sf::Mouse::getPosition(m_window)));
 
         if (m_gameState == GameState::GAME_INIT)
         {

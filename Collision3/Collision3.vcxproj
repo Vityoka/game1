@@ -130,6 +130,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\ball.cpp" />
+    <ClCompile Include="src\ball_creator.cpp" />
     <ClCompile Include="src\bricks.cpp" />
     <ClCompile Include="src\collision_detector.cpp" />
     <ClCompile Include="src\collision_resolver_linear.cpp" />
@@ -141,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ball.h" />
+    <ClInclude Include="src\ball_creator.h" />
     <ClInclude Include="src\bricks.h" />
     <ClInclude Include="src\collision_detector.h" />
     <ClInclude Include="src\collision_resolver_base.h" />

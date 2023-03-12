@@ -32,6 +32,17 @@ Ball::Ball(sf::Vector2f shapeSize, sf::Color color, float posX, float posY)
   shape.setPosition(m_position.x, m_position.y);
 }
 
+Ball::Ball(sf::Vector2f shapeSize, sf::Color color, float posX, float posY, sf::Vector2f velocity)
+{
+  m_position.x = posX;
+  m_position.y = posY;
+  shape.setRadius(shapeSize.x);
+  shape.setFillColor(sf::Color::Green);
+  shape.setOrigin(shapeSize.x, shapeSize.x);
+  shape.setPosition(m_position.x, m_position.y);
+  m_velocity = velocity;
+}
+
 
 void Ball::calcNextPos(float deltaTime)
 {

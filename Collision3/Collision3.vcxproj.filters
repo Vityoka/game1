@@ -42,6 +42,9 @@
     <ClCompile Include="src\collision_resolver_linear.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\ball_creator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ball.h">
@@ -75,6 +78,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="src\collision_resolver_linear.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ball_creator.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
