@@ -78,6 +78,9 @@ void Game::pollEvents()
       case sf::Event::MouseButtonPressed:
       {
         //BallCreator ballCreator;
+        Entity* newBall = new Ball();
+        m_entities.push_back(newBall);
+
         if (m_gameState == GameState::GAME_INIT)
         {
           m_gameState = GameState::GAME_RUNNING;
