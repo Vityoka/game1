@@ -17,7 +17,7 @@ private:
 
 public:
   Bricks();
-  void update(sf::Window& window);
+  void update(sf::Window& window, float deltaTime);
   std::vector<sf::RectangleShape>& getShapes(){return shapes;}
   //const sf::RectangleShape& getShape(void) override;
 };

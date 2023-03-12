@@ -20,7 +20,7 @@ private:
 
 public:
   Player();
-  void update(sf::Window& window) override;
+  void update(sf::Window& window, float deltaTime) override;
   const sf::Shape& getShape() override {return shape;}
 
   float getBorderLeft() const{return m_position.x - shapeSize.x / 2.0;}

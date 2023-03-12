@@ -69,7 +69,12 @@ void Ball::restorePos()
   m_position.y = m_prevPosition.y;
 }
 
-void Ball::update(sf::Window& window)
+void Ball::update(sf::Window& window, float deltaTime)
 {
-  shape.setPosition(m_position.x, m_position.y);
+  if (!m_wasUpdated)
+  {
+    calcNextPos(deltaTime);
+    shape.setPosition(m_position.x, m_position.y);
+  }
+  m_wasUpdated = true;
 }

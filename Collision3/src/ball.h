@@ -32,7 +32,7 @@ public:
   const sf::Shape& getShape() override { return shape; }
 
   //void update(float deltaTime);
-  void update(sf::Window& window) override;
+  void update(sf::Window& window, float deltaTime) override;
 
   float getBorderLeft() const{return m_position.x - ballRadius;}
   float getBorderRight() const{return m_position.x + ballRadius;}

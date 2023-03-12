@@ -46,7 +46,12 @@ const sf::Shape& Wall::getShape(void)
     return shape;
 }
 
-void Wall::update(sf::Window& window)
+void Wall::update(sf::Window& window, float deltaTime)
 {
-
+  if (!m_wasUpdated)
+  {
+    //calcNextPos(deltaTime);
+    //shape.setPosition(m_position.x, m_position.y);
+  }
+  m_wasUpdated = true;
 }

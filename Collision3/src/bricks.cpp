@@ -49,7 +49,7 @@ Bricks::Bricks()
 	}
 }
 
-void Bricks::update(sf::Window& window)
+void Bricks::update(sf::Window& window, float deltaTime)
 {
 
 }

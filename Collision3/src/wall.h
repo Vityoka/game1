@@ -17,7 +17,7 @@ public:
   void savePrevPos() override;
   void restorePos() override;
   const sf::Shape& getShape(void) override;
-  void update(sf::Window& window) override;
+  void update(sf::Window& window, float deltaTime) override;
 
   float getBorderLeft() const{return shape.getPosition().x - shapeSize.x / 2.0;}
   float getBorderRight() const{return shape.getPosition().x + shapeSize.x / 2.0;}

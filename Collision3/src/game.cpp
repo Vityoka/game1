@@ -152,33 +152,31 @@ void Game::updateNormal()
 {
   for (auto entity : m_entities)
   {
+
     Ball* ballEntity = dynamic_cast<Ball*>(entity);
     static int breakpoint;
     if (ballEntity != nullptr)
     {
-      breakpoint++;
+      breakpoint++; //helping debugging only. Code stops if entity is a ball.
     }
 
-    entity->savePrevPos();
-    if (!entity->m_wasUpdated)
-    {
-      entity->calcNextPos(m_deltaTime);
-      entity->update(m_window); //todo: necessary now because collison detection now works based on shape position and not member position variables.
-    }
-    entity->m_wasUpdated = false;
+    // Detect collision between this entity and all the other ones
     Entity* collidedEntity = m_collisionDetector.detectAABBCollision(m_entities, entity);
     if (collidedEntity != nullptr)
     {
+      // resolve collision and update both entities
       m_collisionResolver.resolveCollision(collidedEntity, entity);
-      entity->calcNextPos(m_deltaTime);
-      entity->update(m_window);
-      entity->m_wasUpdated = true;
-      collidedEntity->calcNextPos(m_deltaTime);
-      collidedEntity->update(m_window);
-      collidedEntity->m_wasUpdated = true;
-
-      //entity->restorePos();
+      entity->update(m_window, m_deltaTime);
+      collidedEntity->update(m_window, m_deltaTime);
     }
-    //entity->update(m_window);
+    else
+    {
+      entity->update(m_window, m_deltaTime);
+    }
   }
+  for (auto entity : m_entities)
+  {
+    entity->resetUpdateFlag();
+  }
+
 }
