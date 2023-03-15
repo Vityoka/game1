@@ -13,10 +13,10 @@ constexpr float ballInitPostionX = 400.0f;
 constexpr float ballInitPostionY = 535.0f;
 constexpr float ballMass = 10.0f;
 
+
 class Ball : public Entity
 {
 private:
-  //sf::Vector2f velocity;
 
   sf::CircleShape shape;
   const sf::Vector2f shapeSize = { 50.0f, 50.0f };
@@ -30,7 +30,7 @@ public:
   void savePrevPos() override;
   void restorePos() override;
 
-  const sf::Shape& getShape() override { return shape; }
+  const sf::Shape& getShape() const override { return shape; }
 
   //void update(float deltaTime);
   void update(sf::Window& window, float deltaTime) override;

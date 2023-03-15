@@ -21,7 +21,7 @@ private:
 public:
   Player();
   void update(sf::Window& window, float deltaTime) override;
-  const sf::Shape& getShape() override {return shape;}
+  const sf::Shape& getShape() const override {return shape;}
 
   float getBorderLeft() const{return m_position.x - shapeSize.x / 2.0;}
   float getBorderRight() const{return m_position.x + shapeSize.x / 2.0;}

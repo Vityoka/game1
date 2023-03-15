@@ -89,5 +89,4 @@ void Ball::update(sf::Window& window, float deltaTime)
     calcNextPos(deltaTime);
     shape.setPosition(m_position.x, m_position.y);
   }
-  m_wasUpdated = true;
 }

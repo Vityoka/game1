@@ -1,9 +1,9 @@
-#include "collision_resolver_linear.h"
+#include "collision_resolver_translational.h"
 #include "entity.h"
 #include <SFML/Graphics.hpp>
 #include "ball.h"
 
-void CollisionResolverLinear::resolveCollision(Entity* e1, Entity* e2)
+void CollisionResolverTranslational::resolveCollision(Entity* e1, Entity* e2)
 {
   // u: velocity after collsion
   // v: velocity before collision

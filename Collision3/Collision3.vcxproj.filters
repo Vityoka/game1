@@ -39,10 +39,19 @@
     <ClCompile Include="src\wall_creator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\collision_resolver_linear.cpp">
+    <ClCompile Include="src\ball_creator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\ball_creator.cpp">
+    <ClCompile Include="src\collision_resolver_translational.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collision_detector_AABB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collision_detector_SAT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collision_manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -77,10 +86,22 @@
     <ClInclude Include="src\collision_resolver_base.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\collision_resolver_linear.h">
+    <ClInclude Include="src\ball_creator.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ball_creator.h">
+    <ClInclude Include="src\collision_resolver_translational.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collision_detector_AABB.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collision_detector_base.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collision_detector_SAT.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collision_manager.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
