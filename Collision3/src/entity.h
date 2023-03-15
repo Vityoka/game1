@@ -21,12 +21,13 @@ public:
     virtual void calcNextPos(float deltaTime) = 0;
     virtual void savePrevPos() = 0;
     virtual void restorePos() = 0;
-    virtual const sf::Shape& getShape(void) = 0;
-    virtual const sf::Vector2f& getPosition(void) { return m_position; };
-    virtual const sf::Vector2f& getVelocity(void) { return m_velocity; };
-    virtual const float getMass(void) { return m_mass; };
+    virtual const sf::Shape& getShape(void) const = 0;
+    virtual const sf::Vector2f& getPosition(void) const { return m_position; };
+    virtual const sf::Vector2f& getVelocity(void) const { return m_velocity; };
+    virtual const float getMass(void) const { return m_mass; };
     virtual void setVelocity(const sf::Vector2f velocity) { m_velocity = velocity; };
     void resetUpdateFlag() { m_wasUpdated = false; };
+    void setUpdateFlag() { m_wasUpdated = true; };
 };
 
 #endif //ENTITY_H_GUARD

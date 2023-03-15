@@ -42,13 +42,15 @@ void Game::init()
 
   //Create entities
 
-  Player* p_player = new Player();
+  //Player* p_player = new Player();
   //m_entities.push_back(p_player);
 
   //Wall* p_wall = new Wall();
   //m_entities.push_back(p_wall);
   WallCreator wallCreator;
   //Entity* p_wall = wallCreator.createProduct();
+  //m_entities.push_back(p_wall);
+  //p_wall = wallCreator.createProduct({ 50.0, 50.0 }, sf::Color::Blue, {500, 200});
   //m_entities.push_back(p_wall);
   wallCreator.generateInitialWalls(m_entities);
 
@@ -145,13 +147,12 @@ void Game::update()
   }
 }
 
-void resolveCollsion(Entity* e1, Entity* e2)
-{
-
-}
 
 void Game::updateNormal()
 {
+  m_collisionManager.manageCollisions(m_entities, m_window, m_deltaTime);
+
+  /*
   for (auto entity : m_entities)
   {
 
@@ -180,5 +181,6 @@ void Game::updateNormal()
   {
     entity->resetUpdateFlag();
   }
+  */
 
 }

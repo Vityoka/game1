@@ -133,7 +133,10 @@
     <ClCompile Include="src\ball_creator.cpp" />
     <ClCompile Include="src\bricks.cpp" />
     <ClCompile Include="src\collision_detector.cpp" />
-    <ClCompile Include="src\collision_resolver_linear.cpp" />
+    <ClCompile Include="src\collision_detector_AABB.cpp" />
+    <ClCompile Include="src\collision_detector_SAT.cpp" />
+    <ClCompile Include="src\collision_manager.cpp" />
+    <ClCompile Include="src\collision_resolver_translational.cpp" />
     <ClCompile Include="src\game.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\player.cpp" />
@@ -145,8 +148,12 @@
     <ClInclude Include="src\ball_creator.h" />
     <ClInclude Include="src\bricks.h" />
     <ClInclude Include="src\collision_detector.h" />
+    <ClInclude Include="src\collision_detector_AABB.h" />
+    <ClInclude Include="src\collision_detector_base.h" />
+    <ClInclude Include="src\collision_detector_SAT.h" />
+    <ClInclude Include="src\collision_manager.h" />
     <ClInclude Include="src\collision_resolver_base.h" />
-    <ClInclude Include="src\collision_resolver_linear.h" />
+    <ClInclude Include="src\collision_resolver_translational.h" />
     <ClInclude Include="src\entity.h" />
     <ClInclude Include="src\entity_creator.h" />
     <ClInclude Include="src\game.h" />

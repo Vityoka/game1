@@ -25,12 +25,12 @@ void WallCreator::generateInitialWalls(std::vector<Entity*>& entities)
   float minWidth = 10.0f;
   float startPosX = 0.0;
   float startPosY = 0.0;
-  bool wasCollison = false;
+  bool wasCollision = false;
 
   // Generate walls with random size and position within window borders and without intersecting each other
   for (int i = 0; i < 20; i++)
   {
-    wasCollison = false;
+    wasCollision = false;
     sf::Vector2f shapeSize = { distribution(rd) * 30.0f + minWidth, distribution(rd) * 30.0f + minHeight };
     sf::Vector2f shapePos = { distribution(rd) * 800.0f, distribution(rd) * 600.0f };
 
@@ -40,12 +40,12 @@ void WallCreator::generateInitialWalls(std::vector<Entity*>& entities)
     {
       if (entities[j]->getShape().getGlobalBounds().intersects(newWall->getShape().getGlobalBounds()))
       {
-          wasCollison = true;
+          wasCollision = true;
           i--;
           break;
       }
     }
-    if (!wasCollison)
+    if (!wasCollision)
     {
       entities.push_back(newWall);
     }

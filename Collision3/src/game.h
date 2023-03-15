@@ -9,7 +9,8 @@
 #include "wall.h"
 #include "collision_detector.h"
 #include "collision_resolver_base.h"
-#include "collision_resolver_linear.h"
+#include "collision_resolver_translational.h"
+#include "collision_manager.h"
 
 enum GameState : char{
   GAME_INIT = 0,
@@ -35,7 +36,8 @@ private:
   float m_deltaTime;
 
   CollisionDetector m_collisionDetector;
-  CollisionResolverLinear m_collisionResolver;
+  CollisionResolverTranslational m_collisionResolver;
+  CollisionManager m_collisionManager;
 
   std::vector<Entity*> m_entities;
 
