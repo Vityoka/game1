@@ -6,6 +6,7 @@
 
 class Entity
 {
+
 private:
     
 protected:
@@ -14,6 +15,8 @@ protected:
     sf::Vector2f m_velocity = {0.0f, 0.0f};
     float m_mass = 1e10f;
     bool m_wasUpdated = false;
+    bool isStaticFlag = false;
+    int shapeType = 0;  //0: rect, 1: ball, 2: line
 public:
     Entity() {};
     Entity(float posX, float posY) : m_position{ posX, posY } { m_position.x = posX; m_position.y = posY; }
@@ -28,6 +31,8 @@ public:
     virtual void setVelocity(const sf::Vector2f velocity) { m_velocity = velocity; };
     void resetUpdateFlag() { m_wasUpdated = false; };
     void setUpdateFlag() { m_wasUpdated = true; };
+    bool isStatic(){return isStaticFlag;};
+    int getShapeType(void) { return shapeType; };
 };
 
 #endif //ENTITY_H_GUARD

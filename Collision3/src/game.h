@@ -7,6 +7,7 @@
 #include "ball.h"
 #include "player.h"
 #include "wall.h"
+#include "line.h"
 #include "collision_detector.h"
 #include "collision_resolver_base.h"
 #include "collision_resolver_translational.h"

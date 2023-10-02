@@ -1,7 +1,7 @@
 #include "game.h"
 #include "wall_creator.h"
 #include "ball_creator.h"
-
+#include "corecrt_math_defines.h"
 
 Game::Game(sf::RenderWindow& window) : m_window(window)
 {
@@ -42,8 +42,8 @@ void Game::init()
 
   //Create entities
 
-  //Player* p_player = new Player();
-  //m_entities.push_back(p_player);
+  Player* p_player = new Player();
+  m_entities.push_back(p_player);
 
   //Wall* p_wall = new Wall();
   //m_entities.push_back(p_wall);
@@ -53,6 +53,15 @@ void Game::init()
   //p_wall = wallCreator.createProduct({ 50.0, 50.0 }, sf::Color::Blue, {500, 200});
   //m_entities.push_back(p_wall);
   wallCreator.generateInitialWalls(m_entities);
+
+  Line* p_line = new Line({100.0, 1.0}, sf::Color::White, 100.0, 100.0, 0.0);
+  m_entities.push_back(p_line);
+
+  Line* p_line2 = new Line({ 200.0, 1.0 }, sf::Color::White, 500.0, 400.0, 90);
+  m_entities.push_back(p_line2);
+
+  Line* p_line3 = new Line({ 100.0, 1.0 }, sf::Color::White, 200.0, 300.0, 45);
+  m_entities.push_back(p_line3);
 
   Ball* p_ball = new Ball();
   m_entities.push_back(p_ball);

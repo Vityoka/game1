@@ -9,7 +9,7 @@
 Ball::Ball()  
 {
 	float intialStartDeviation = -0.2f; //should be randomized
-
+  shapeType = 1;
   m_mass = ballMass;
   m_position.x = ballInitPostionX;
   m_position.y = ballInitPostionY;
@@ -24,6 +24,7 @@ Ball::Ball()
 
 Ball::Ball(sf::Vector2f shapeSize, sf::Color color, float posX, float posY)
 {
+  shapeType = 1;
   m_mass = ballMass;
   m_position.x = posX;
   m_position.y = posY;
@@ -35,6 +36,7 @@ Ball::Ball(sf::Vector2f shapeSize, sf::Color color, float posX, float posY)
 
 Ball::Ball(sf::Vector2f shapeSize, sf::Color color, float posX, float posY, sf::Vector2f velocity)
 {
+  shapeType = 1;
   m_mass = ballMass;
   m_position.x = posX;
   m_position.y = posY;

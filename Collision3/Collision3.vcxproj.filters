@@ -54,6 +54,9 @@
     <ClCompile Include="src\collision_manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\line.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ball.h">
@@ -102,6 +105,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="src\collision_manager.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\line.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

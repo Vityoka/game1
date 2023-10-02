@@ -138,6 +138,7 @@
     <ClCompile Include="src\collision_manager.cpp" />
     <ClCompile Include="src\collision_resolver_translational.cpp" />
     <ClCompile Include="src\game.cpp" />
+    <ClCompile Include="src\line.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\player.cpp" />
     <ClCompile Include="src\wall.cpp" />
@@ -157,6 +158,7 @@
     <ClInclude Include="src\entity.h" />
     <ClInclude Include="src\entity_creator.h" />
     <ClInclude Include="src\game.h" />
+    <ClInclude Include="src\line.h" />
     <ClInclude Include="src\player.h" />
     <ClInclude Include="src\wall.h" />
     <ClInclude Include="src\wall_creator.h" />

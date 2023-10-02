@@ -3,6 +3,7 @@
 
 Player::Player()
 {
+  shapeType = 0;
   m_position.x = playerInitPosX;
   m_position.y = playerInitPosY;
   shape.setSize(shapeSize);
@@ -51,5 +52,4 @@ void Player::update(sf::Window& window, float deltaTime)
     calcNextPos(deltaTime);
     shape.setPosition(m_position.x, m_position.y);
   }
-  m_wasUpdated = true;
 }

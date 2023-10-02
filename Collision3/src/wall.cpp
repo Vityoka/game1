@@ -5,6 +5,8 @@ constexpr float wallInitPosY = 550.0f;
 
 Wall::Wall()
 {
+  isStaticFlag = true;
+  shapeType = 0;
   m_position.x = wallInitPosX;
   m_position.y = wallInitPosY;
   shape.setSize(defaultShapeSize);
@@ -15,6 +17,8 @@ Wall::Wall()
 
 Wall::Wall(sf::Vector2f shapeSize, sf::Color color, float posX = wallInitPosX, float posY = wallInitPosY)
 {
+  isStaticFlag = true;
+  shapeType = 0;
   m_position.x = posX;
   m_position.y = posY;
   shape.setSize(shapeSize);
